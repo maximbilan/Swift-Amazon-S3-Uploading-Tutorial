@@ -28,14 +28,20 @@
                                     <action selector="uploadButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0e7-od-EcO"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A3I-O0-fZX">
+                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wwR-0L-t8B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6fM-Dp-Tmi"/>
                             <constraint firstItem="wwR-0L-t8B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEs-PE-SdB"/>
+                            <constraint firstItem="A3I-O0-fZX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ibb-QO-rVp"/>
+                            <constraint firstItem="A3I-O0-fZX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tbw-5m-QBY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="A3I-O0-fZX" id="yun-2i-dmC"/>
                         <outlet property="uploadButton" destination="wwR-0L-t8B" id="RK1-oO-5OE"/>
                     </connections>
                 </viewController>
