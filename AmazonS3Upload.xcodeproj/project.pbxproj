@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B2D02452D80F7B2B392D0C /* Pods_AmazonS3Upload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA04946EBBB4D37EF5E06950 /* Pods_AmazonS3Upload.framework */; };
 		949B3CEA1E067A7400C0DFAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B3CE91E067A7400C0DFAC /* AppDelegate.swift */; };
 		949B3CEC1E067A7400C0DFAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949B3CEB1E067A7400C0DFAC /* ViewController.swift */; };
 		949B3CEF1E067A7400C0DFAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949B3CED1E067A7400C0DFAC /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45B2470AFF59D539272E19D2 /* Pods-AmazonS3Upload.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazonS3Upload.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmazonS3Upload/Pods-AmazonS3Upload.debug.xcconfig"; sourceTree = "<group>"; };
+		5319BFE07099A75E5A845570 /* Pods-AmazonS3Upload.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazonS3Upload.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmazonS3Upload/Pods-AmazonS3Upload.release.xcconfig"; sourceTree = "<group>"; };
 		949B3CE61E067A7400C0DFAC /* AmazonS3Upload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazonS3Upload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949B3CE91E067A7400C0DFAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		949B3CEB1E067A7400C0DFAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		949B3CF01E067A7400C0DFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		949B3CF31E067A7400C0DFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		949B3CF51E067A7400C0DFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA04946EBBB4D37EF5E06950 /* Pods_AmazonS3Upload.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmazonS3Upload.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B2D02452D80F7B2B392D0C /* Pods_AmazonS3Upload.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024B21410BB43DB430E18E5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45B2470AFF59D539272E19D2 /* Pods-AmazonS3Upload.debug.xcconfig */,
+				5319BFE07099A75E5A845570 /* Pods-AmazonS3Upload.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		949B3CDD1E067A7400C0DFAC = {
 			isa = PBXGroup;
 			children = (
 				949B3CE81E067A7400C0DFAC /* AmazonS3Upload */,
 				949B3CE71E067A7400C0DFAC /* Products */,
+				024B21410BB43DB430E18E5F /* Pods */,
+				B56C30EC4908D025F352127F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = AmazonS3Upload;
 			sourceTree = "<group>";
 		};
+		B56C30EC4908D025F352127F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA04946EBBB4D37EF5E06950 /* Pods_AmazonS3Upload.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 949B3CF81E067A7400C0DFAC /* Build configuration list for PBXNativeTarget "AmazonS3Upload" */;
 			buildPhases = (
+				3B8B4E4F51D5D75B4FDD80B1 /* [CP] Check Pods Manifest.lock */,
 				949B3CE21E067A7400C0DFAC /* Sources */,
 				949B3CE31E067A7400C0DFAC /* Frameworks */,
 				949B3CE41E067A7400C0DFAC /* Resources */,
+				F9DB2F5E6D19F388A2B4E9C0 /* [CP] Embed Pods Frameworks */,
+				13E1C6CC591D1C10FA2A5855 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13E1C6CC591D1C10FA2A5855 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmazonS3Upload/Pods-AmazonS3Upload-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B8B4E4F51D5D75B4FDD80B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9DB2F5E6D19F388A2B4E9C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmazonS3Upload/Pods-AmazonS3Upload-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		949B3CE21E067A7400C0DFAC /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		949B3CF91E067A7400C0DFAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45B2470AFF59D539272E19D2 /* Pods-AmazonS3Upload.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AmazonS3Upload/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		949B3CFA1E067A7400C0DFAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5319BFE07099A75E5A845570 /* Pods-AmazonS3Upload.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AmazonS3Upload/Info.plist;
