@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import AWSS3
 import AWSCore
 
@@ -21,6 +20,9 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func uploadButtonAction(_ sender: UIButton) {
+		uploadButton.isHidden = true
+		activityIndicator.startAnimating()
+		
 		let accessKey = "PLEASE_ENTER_YOUR_AMAZON_S3_ACCESS_KEY"
 		let secretKey = "PLEASE_ENTER_YOUR_AMAZON_S3_SECRET_KEY"
 		
@@ -30,8 +32,49 @@ class ViewController: UIViewController {
 		AWSServiceManager.default().defaultServiceConfiguration = configuration
 		
 		let S3BucketName = "BUCKET_NAME"
-		let remoteName = "test"
+		let remoteName = "test.jpg"
+		
+		let uploadRequest = AWSS3TransferManagerUploadRequest()!
+		uploadRequest.body = imageUrlForTestfile(fileName: remoteName)
+		uploadRequest.key = remoteName
+		uploadRequest.bucket = S3BucketName
+		uploadRequest.contentType = "image/jpeg"
+		uploadRequest.acl = .publicRead
+		
+		let transferManager = AWSS3TransferManager.default()
+		transferManager?.upload(uploadRequest).continue({ [weak self] (task: AWSTask<AnyObject>) -> Any? in
+			DispatchQueue.main.async {
+				self?.uploadButton.isHidden = false
+				self?.activityIndicator.stopAnimating()
+			}
+			
+			if let error = task.error {
+				print("Upload failed with error: (\(error.localizedDescription))")
+			}
+			if let exception = task.exception {
+				print("Upload failed with exception (\(exception))")
+			}
+			
+			if task.result != nil {
+				let url = AWSS3.default().configuration.endpoint.url
+				let publicURL = url?.appendingPathComponent(uploadRequest.bucket!).appendingPathComponent(uploadRequest.key!)
+				print("Uploaded to:\(publicURL)")
+			}
+			
+			return nil
+		})
 	}
 
+	func imageUrlForTestfile(fileName: String) -> URL {
+		let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+		let image = UIImage(named: "test")
+		let data = UIImageJPEGRepresentation(image!, 0.6)
+		do {
+			try data?.write(to: fileURL)
+		}
+		catch {}
+		return fileURL
+	}
+	
 }
 
