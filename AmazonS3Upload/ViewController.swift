@@ -33,9 +33,16 @@ class ViewController: UIViewController {
 		
 		let S3BucketName = "BUCKET_NAME"
 		let remoteName = "test.jpg"
+		let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(remoteName)
+		let image = UIImage(named: "test")
+		let data = UIImageJPEGRepresentation(image!, 0.9)
+		do {
+			try data?.write(to: fileURL)
+		}
+		catch {}
 		
 		let uploadRequest = AWSS3TransferManagerUploadRequest()!
-		uploadRequest.body = imageUrlForTestfile(fileName: remoteName)
+		uploadRequest.body = fileURL
 		uploadRequest.key = remoteName
 		uploadRequest.bucket = S3BucketName
 		uploadRequest.contentType = "image/jpeg"
@@ -63,17 +70,6 @@ class ViewController: UIViewController {
 			
 			return nil
 		})
-	}
-
-	func imageUrlForTestfile(fileName: String) -> URL {
-		let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
-		let image = UIImage(named: "test")
-		let data = UIImageJPEGRepresentation(image!, 0.6)
-		do {
-			try data?.write(to: fileURL)
-		}
-		catch {}
-		return fileURL
 	}
 	
 }
