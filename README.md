@@ -2,6 +2,8 @@
 
 I would like to share simple tutorial how to upload file to Amazon S3 in iOS using Swift 3. Let’s go.
 
+![alt tag](https://raw.github.com/maximbilan/Swift-Amazon-S3-Uploading-Tutorial/master/img/img.png)
+
 1. We need to add Amazon S3 framework to your project. In this example I will do this with helping Cocoapods.
 
 2. Create a Podfile:
