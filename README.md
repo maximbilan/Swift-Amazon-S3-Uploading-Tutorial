@@ -8,16 +8,72 @@ I would like to share simple tutorial how to upload file to Amazon S3 in iOS usi
 
 2. Create a Podfile:
 
+<pre>
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+target 'AmazonS3Upload' do
+pod 'AWSS3'
+end
+</pre>
+
 3. Run the next command from Terminal:
+
+<pre>
+pod install
+</pre>
 
 4. Open the generated workspace. And after that we can implement uploading of files using frameworks from Pods.
 
 5. We need to import 2 modules:
 
+<pre>
+import AWSS3
+import AWSCore
+</pre>
+
 6. Setup AWS configuration using your credentials. For example:
+
+<pre>
+let accessKey = "..."
+let secretKey = "..."
+let credentialsProvider = AWSStaticCredentialsProvider(accessKey: accessKey, secretKey: secretKey)
+let configuration = AWSServiceConfiguration(region: AWSRegionType.usEast1, credentialsProvider: credentialsProvider)
+AWSServiceManager.default().defaultServiceConfiguration = configuration
+</pre>
 
 7. Create upload request:
 
+<pre>
+let url = ...URL to your file...
+let remoteName = "Name of uploaded file"
+let S3BucketName = "Name of your bucket on Amazon S3"
+let uploadRequest = AWSS3TransferManagerUploadRequest()!
+uploadRequest.body = url
+uploadRequest.key = remoteName
+uploadRequest.bucket = S3BucketName
+uploadRequest.contentType = "image/jpeg"
+uploadRequest.acl = .publicRead
+</pre>
+
 8. And upload using AWSS3TransferManager.
+
+<pre>
+let transferManager = AWSS3TransferManager.default()
+transferManager?.upload(uploadRequest).continue({ (task: AWSTask<AnyObject>) -> Any? in
+  if let error = task.error {
+    print("Upload failed with error: (\(error.localizedDescription))")
+  }
+  if let exception = task.exception {
+    print("Upload failed with exception (\(exception))")
+  }
+  if task.result != nil {
+    let url = AWSS3.default().configuration.endpoint.url
+    let publicURL = url?.appendingPathComponent(uploadRequest.bucket!).appendingPathComponent(uploadRequest.key!)
+    print("Uploaded to:\(publicURL)")
+  }
+  return nil
+})
+</pre>
 
 That’s all. The full worked example you can found in this repository.
