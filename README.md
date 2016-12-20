@@ -4,9 +4,9 @@ I would like to share simple tutorial how to upload file to Amazon S3 in iOS usi
 
 ![alt tag](https://raw.github.com/maximbilan/Swift-Amazon-S3-Uploading-Tutorial/master/img/img1.png)
 
-1. We need to add <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> framework to your project. In this example I will do this with helping <a href="https://cocoapods.org">Cocoapods</a>.
+We need to add <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> framework to your project. In this example I will do this with helping <a href="https://cocoapods.org">Cocoapods</a>.
 
-2. Create a Podfile:
+Create a Podfile:
 
 <pre>
 platform :ios, '8.0'
@@ -17,22 +17,22 @@ pod 'AWSS3'
 end
 </pre>
 
-3. Run the next command from Terminal:
+Run the next command from Terminal:
 
 <pre>
 pod install
 </pre>
 
-4. Open the generated workspace. And after that we can implement uploading of files using frameworks from Pods.
+Open the generated workspace. And after that we can implement uploading of files using frameworks from Pods.
 
-5. We need to import 2 modules:
+We need to import 2 modules:
 
 <pre>
 import AWSS3
 import AWSCore
 </pre>
 
-6. Setup AWS configuration using your credentials. For example:
+Setup AWS configuration using your credentials. For example:
 
 <pre>
 let accessKey = "..."
@@ -42,7 +42,7 @@ let configuration = AWSServiceConfiguration(region: AWSRegionType.usEast1, crede
 AWSServiceManager.default().defaultServiceConfiguration = configuration
 </pre>
 
-7. Create upload request:
+Create upload request:
 
 <pre>
 let url = ...URL to your file...
@@ -56,7 +56,7 @@ uploadRequest.contentType = "image/jpeg"
 uploadRequest.acl = .publicRead
 </pre>
 
-8. And upload using AWSS3TransferManager.
+And upload using AWSS3TransferManager.
 
 <pre>
 let transferManager = AWSS3TransferManager.default()
