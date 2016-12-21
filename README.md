@@ -1,6 +1,6 @@
 # Swift 3 Upload file to Amazon S3
 
-I would like to share simple tutorial how to upload file to Amazon S3 in iOS using Swift 3. Let’s go.
+I would like to share simple tutorial how to upload file to <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> in iOS using Swift 3. Let’s go.
 
 ![alt tag](https://raw.github.com/maximbilan/Swift-Amazon-S3-Uploading-Tutorial/master/img/img1.png)
 
