@@ -17,7 +17,7 @@ pod 'AWSS3'
 end
 </pre>
 
-Run the next command from Terminal:
+Run the next command from <i>Terminal</i>:
 
 <pre>
 pod install
