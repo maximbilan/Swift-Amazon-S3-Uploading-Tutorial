@@ -56,7 +56,7 @@ uploadRequest.contentType = "image/jpeg"
 uploadRequest.acl = .publicRead
 </pre>
 
-And upload using AWSS3TransferManager.
+And upload using <i>AWSS3TransferManager</i>.
 
 <pre>
 let transferManager = AWSS3TransferManager.default()
