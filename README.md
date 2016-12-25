@@ -6,7 +6,7 @@ I would like to share simple tutorial how to upload file to <a href="https://git
 
 We need to add <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> framework to your project. In this example I will do this with helping <a href="https://cocoapods.org">Cocoapods</a>.
 
-Create a Podfile:
+Create a <i>Podfile</i>:
 
 <pre>
 platform :ios, '8.0'
