@@ -23,7 +23,7 @@ Run the next command from <i>Terminal</i>:
 pod install
 </pre>
 
-Open the generated workspace. And after that we can implement uploading of files using frameworks from Pods.
+Open the generated workspace. And after that we can implement uploading of files using frameworks from <i>Pods</i>.
 
 We need to import 2 modules:
 
