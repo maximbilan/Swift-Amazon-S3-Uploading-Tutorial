@@ -32,7 +32,7 @@ import AWSS3
 import AWSCore
 </pre>
 
-Setup <i>AWS</i> configuration using your credentials. For example:
+Setup <i>AWS configuration</i>  using your <i>credentials</i>. For example:
 
 <pre>
 let accessKey = "..."
