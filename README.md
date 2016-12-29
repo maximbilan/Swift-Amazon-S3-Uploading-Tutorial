@@ -75,5 +75,3 @@ transferManager?.upload(uploadRequest).continue({ (task: AWSTask<AnyObject>) -> 
   return nil
 })
 </pre>
-
-That’s all. The full worked example you can found in this repository.
