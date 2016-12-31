@@ -4,7 +4,8 @@ I would like to share simple tutorial how to upload file to <a href="https://git
 
 ![alt tag](https://raw.github.com/maximbilan/Swift-Amazon-S3-Uploading-Tutorial/master/img/img1.png)
 
-We need to add <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> framework to your project. In this example I will do this with helping <a href="https://cocoapods.org">Cocoapods</a>.
+We need to add <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> framework to your project.<br>
+In this example I will do this with helping <a href="https://cocoapods.org">Cocoapods</a>.
 
 Create a <i>Podfile</i>:
 
