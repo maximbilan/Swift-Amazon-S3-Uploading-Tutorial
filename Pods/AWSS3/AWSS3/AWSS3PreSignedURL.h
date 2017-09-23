@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -190,7 +190,7 @@ typedef NS_ENUM(NSInteger, AWSS3PresignedURLErrorType) {
 /**
  Build a time-limited pre-signed URL to get object from S3, return nil if build process failed.
 
- @param preSignedURLRequest The AWSS3PreSignedURLRequest that defines the parameters of the operation.
+ @param getPreSignedURLRequest The AWSS3PreSignedURLRequest that defines the parameters of the operation.
  @return A pre-signed NSURL for the resource. return nil if any errors occured.
  @see AWSS3GetPreSignedURLRequest
  */
