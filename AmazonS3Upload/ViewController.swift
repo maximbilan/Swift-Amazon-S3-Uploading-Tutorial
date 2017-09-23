@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 		let secretKey = "PLEASE_ENTER_YOUR_AMAZON_S3_SECRET_KEY"
 		
 		let credentialsProvider = AWSStaticCredentialsProvider(accessKey: accessKey, secretKey: secretKey)
-		let configuration = AWSServiceConfiguration(region:AWSRegionType.usEast1, credentialsProvider:credentialsProvider)
+		let configuration = AWSServiceConfiguration(region:AWSRegionType.USEast1, credentialsProvider:credentialsProvider)
 		
 		AWSServiceManager.default().defaultServiceConfiguration = configuration
 		
@@ -49,7 +49,8 @@ class ViewController: UIViewController {
 		uploadRequest.acl = .publicRead
 		
 		let transferManager = AWSS3TransferManager.default()
-		transferManager?.upload(uploadRequest).continue({ [weak self] (task: AWSTask<AnyObject>) -> Any? in
+		
+		transferManager.upload(uploadRequest).continueWith { [weak self] (task) -> Any? in
 			DispatchQueue.main.async {
 				self?.uploadButton.isHidden = false
 				self?.activityIndicator.stopAnimating()
@@ -58,18 +59,17 @@ class ViewController: UIViewController {
 			if let error = task.error {
 				print("Upload failed with error: (\(error.localizedDescription))")
 			}
-			if let exception = task.exception {
-				print("Upload failed with exception (\(exception))")
-			}
 			
 			if task.result != nil {
 				let url = AWSS3.default().configuration.endpoint.url
 				let publicURL = url?.appendingPathComponent(uploadRequest.bucket!).appendingPathComponent(uploadRequest.key!)
-				print("Uploaded to:\(publicURL)")
+				if let absoluteString = publicURL?.absoluteString {
+					print("Uploaded to:\(absoluteString)")
+				}
 			}
 			
 			return nil
-		})
+		}
 	}
 	
 }
