@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 		let remoteName = "test.jpg"
 		let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(remoteName)
 		let image = UIImage(named: "test")
-		let data = UIImageJPEGRepresentation(image!, 0.9)
+		let data = image!.jpegData(compressionQuality: 0.9)
 		do {
 			try data?.write(to: fileURL)
 		}
