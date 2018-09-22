@@ -1,6 +1,6 @@
 # How to upload a file to Amazon S3 using Swift
 
-I would like to share simple tutorial how to upload a to <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> in <i>iOS</i> using <i>Swift</i>. Let’s go.
+I would like to share a simple tutorial how to upload a to <a href="https://github.com/aws/aws-sdk-ios">Amazon S3</a> in <i>iOS</i> using <i>Swift</i>. Let’s go.
 
 ![alt tag](https://raw.github.com/maximbilan/Swift-Amazon-S3-Uploading-Tutorial/master/img/img1.png)
 
@@ -33,7 +33,7 @@ import AWSS3
 import AWSCore
 </pre>
 
-Setup <i>AWS configuration</i>  using your <i>credentials</i>. For example:
+Set up a <i>AWS configuration</i>  using your <i>credentials</i>. For example:
 
 <pre>
 let accessKey = "..."
@@ -43,7 +43,7 @@ let configuration = AWSServiceConfiguration(region: AWSRegionType.usEast1, crede
 AWSServiceManager.default().defaultServiceConfiguration = configuration
 </pre>
 
-Create upload request:
+Create an upload request:
 
 <pre>
 let url = ...URL to your file...
